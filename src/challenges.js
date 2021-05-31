@@ -22,7 +22,7 @@ function splitSentence(string) {
 function concatName(arrayS) {
   let first = arrayS[0];
   let last = arrayS[arrayS.length - 1];
-  let concat = last + ', ' + first;
+  let concat = `${last}, ${first}`;
   return concat;
 }
 // Desafio 5
