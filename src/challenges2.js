@@ -19,11 +19,25 @@ function techList(tecs, nome) {
 
 // Desafio 11
 function generatePhoneNumber(number) {
-  let numero = [];
   if (number.length !== 11) {
-    numero = 'Array Com Tamanho Incorreto';
+    return 'Array com tamanho incorreto.';
   }
-  return numero;
+  let numero = [];
+  for (let i in number) {
+    if (numero[number[i]]) {
+      numero[number[i]] += 1;
+    } else {
+      numero[number[i]] = 1;
+    }
+  }
+  for (let j in numero) {
+    for (let i in number) {
+      if (number[i] < 0 || number[i] > 9 || numero[j] === 3) {
+        return 'não é possível gerar um número de telefone com esses valores';
+      }
+    }
+  }
+  return `(${number[0]}${number[1]}) ${number[2]}${number[3]}${number[4]}${number[5]}${number[6]}-${number[7]}${number[8]}${number[9]}${number[10]}`;
 }
 
 // Desafio 12
